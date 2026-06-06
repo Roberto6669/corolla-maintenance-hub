@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corolla Maintenance Hub</title>
+    <style>
+        body { background: #0a0e27; color: #f9f7f3; font-family: 'Inter', sans-serif; padding: 20px; }
+        .creator-bar { background: #1a1a2e; border-bottom: 2px solid #d4af37; padding: 12px; text-align: center; color: #d4af37; font-size: 12px; margin-bottom: 20px; }
+        h1 { color: #d4af37; font-family: 'Playfair Display', serif; margin: 20px 0; }
+        .system-card { background: #1a1a2e; border: 2px solid #8b7355; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .system-card:hover { border-color: #d4af37; }
+        input { padding: 10px; background: #0a0e27; border: 2px solid #8b7355; border-radius: 4px; color: #f9f7f3; margin: 10px 0; }
+        button { background: #d4af37; color: #0a0e27; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        a { color: #ff3352; text-decoration: none; margin: 10px 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="creator-bar">Roberto Escobar Citty Productions — Corolla 2011 Maintenance Hub v1.0</div>
+    <h1>🚗 Corolla Maintenance Hub</h1>
+    <p>Complete maintenance guide for Toyota Corolla 2011 (1.8L 2ZR-FE)</p>
+    
+    <div class="mileage-tracker">
+        <h2>📊 Mileage Tracker</h2>
+        <input type="number" id="mileageInput" placeholder="Enter mileage...">
+        <button onclick="trackMileage()">Log Mileage</button>
+        <div id="historyList"></div>
+    </div>
+    
+    <div class="system-card">
+        <h2>🛢️ Oil & Fluids</h2>
+        <ul>
+            <li><input type="checkbox"> Engine Oil Change (5,000-10,000 mi)</li>
+            <li><input type="checkbox"> Transmission Fluid Check</li>
+            <li><input type="checkbox"> Coolant Level Check</li>
+        </ul>
+        <a href="https://www.youtube.com/results?search_query=corolla+oil+change" target="_blank">📺 Tutorial</a>
+    </div>
+    
+    <div class="system-card">
+        <h2>🔧 Filters</h2>
+        <ul>
+            <li><input type="checkbox"> Engine Air Filter (30,000 mi)</li>
+            <li><input type="checkbox"> Cabin Air Filter (15,000 mi)</li>
+        </ul>
+        <a href="https://www.youtube.com/results?search_query=corolla+air+filter" target="_blank">📺 Tutorial</a>
+    </div>
+    
+    <div class="system-card">
+        <h2>🛑 Brakes</h2>
+        <ul>
+            <li><input type="checkbox"> Brake Pad Inspection</li>
+            <li><input type="checkbox"> Brake Rotor Check</li>
+        </ul>
+        <a href="https://www.youtube.com/results?search_query=corolla+brake+pads" target="_blank">📺 Tutorial</a>
+    </div>
+    
+    <script>
+        function trackMileage() {
+            const input = document.getElementById('mileageInput');
+            const mileage = input.value;
+            if (!mileage) return;
+            const history = JSON.parse(localStorage.getItem('mileageHistory') || '[]');
+            history.push({ mileage, date: new Date().toLocaleDateString() });
+            localStorage.setItem('mileageHistory', JSON.stringify(history));
+            input.value = '';
+            displayHistory();
+        }
+        function displayHistory() {
+            const history = JSON.parse(localStorage.getItem('mileageHistory') || '[]');
+            const list = document.getElementById('historyList');
+            list.innerHTML = history.map(h => `<p>${h.mileage} mi - ${h.date}</p>`).join('');
+        }
+        displayHistory();
+    </script>
+</body>
+</html>
