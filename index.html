@@ -7,24 +7,24 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #000000; color: #ffffff; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; }
-        
+
         .top-header { display: flex; align-items: center; justify-content: space-between; padding: 25px 40px; border-bottom: 1px solid #333; }
         .header-left { display: flex; align-items: center; gap: 15px; }
         .logo-small { width: 40px; height: 40px; flex-shrink: 0; }
         .logo-small img { width: 100%; height: auto; }
         .header-name { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
         .version-box { background: #00d9ff; color: #000; padding: 8px 16px; border-radius: 4px; font-size: 12px; font-weight: 700; }
-        
+
         header { padding: 40px; text-align: center; border-bottom: 1px solid #333; }
         .header-title { font-size: 14px; color: #666; margin-bottom: 30px; font-weight: 400; }
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 900px; margin: 0 auto; }
         .stat-card { background: #111; border: 1px solid #333; padding: 20px; text-align: center; }
         .stat-number { font-size: 28px; font-weight: 700; color: #00d9ff; margin-bottom: 5px; }
         .stat-label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-        
+
         main { max-width: 1400px; margin: 0 auto; padding: 50px 40px; }
         .section-title { font-size: 24px; font-weight: 700; margin: 50px 0 30px 0; padding-bottom: 15px; border-bottom: 1px solid #333; }
-        
+
         .mileage-card { background: #111; border: 1px solid #333; border-radius: 8px; padding: 40px; margin-bottom: 50px; }
         .mileage-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .mileage-input-group h3 { font-size: 20px; color: #00d9ff; margin-bottom: 15px; font-weight: 600; }
@@ -32,11 +32,11 @@
         input[type="number"]:focus { outline: none; border-color: #00d9ff; }
         button { background: #00d9ff; color: #000; padding: 12px 30px; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; }
         button:hover { background: #00b8d4; }
-        
+
         .history-section h3 { font-size: 20px; color: #00d9ff; margin-bottom: 15px; font-weight: 600; }
         .history-list { list-style: none; max-height: 300px; overflow-y: auto; }
         .history-item { background: #111; padding: 10px; margin-bottom: 8px; border-left: 3px solid #00d9ff; display: flex; justify-content: space-between; font-size: 13px; color: #ccc; }
-        
+
         .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
         .system-card { background: #111; border: 1px solid #333; border-radius: 8px; padding: 25px; transition: all 0.3s; }
         .system-card:hover { border-color: #00d9ff; box-shadow: 0 0 20px rgba(0, 217, 255, 0.15); }
@@ -51,18 +51,16 @@
         .card-action { margin-top: 15px; padding-top: 12px; border-top: 1px solid #222; }
         .youtube-btn { background: #ff3352; color: white; padding: 8px 14px; border-radius: 4px; font-size: 11px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; }
         .youtube-btn:hover { background: #e62e48; }
-        
-        footer { background: #111; border-top: 1px solid #333; padding: 30px 40px; }
-        .footer-content { display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto; }
-        .footer-left { display: flex; align-items: center; gap: 12px; }
-        .footer-logo { width: 30px; height: 30px; }
+
+        footer { background: #111; border-top: 1px solid #333; padding: 40px; text-align: center; }
+        .footer-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+        .footer-logo { width: 48px; height: 48px; flex-shrink: 0; }
         .footer-logo img { width: 100%; height: auto; }
-        .footer-text { font-size: 12px; color: #666; }
-        .footer-text strong { color: #00d9ff; }
-        .footer-right { font-size: 11px; color: #555; }
-        
+        .footer-text { font-size: 14px; color: #888; }
+        .footer-text strong { color: #fff; font-weight: 700; }
+
         @media (max-width: 1024px) { .dashboard-grid { grid-template-columns: repeat(3, 1fr); } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .dashboard-grid { grid-template-columns: repeat(2, 1fr); } .mileage-content { grid-template-columns: 1fr; } .top-header { flex-direction: column; gap: 15px; justify-content: flex-start; align-items: flex-start; } .footer-content { flex-direction: column; gap: 15px; align-items: flex-start; } }
+        @media (max-width: 768px) { .dashboard-grid { grid-template-columns: repeat(2, 1fr); } .mileage-content { grid-template-columns: 1fr; } .top-header { flex-direction: column; gap: 15px; align-items: flex-start; } }
         @media (max-width: 480px) { .dashboard-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -74,7 +72,7 @@
         </div>
         <div class="version-box">v2.1</div>
     </div>
-    
+
     <header>
         <div class="header-title">Corolla Maintenance Hub</div>
         <div class="stats-grid">
@@ -84,7 +82,7 @@
             <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">Reliability</div></div>
         </div>
     </header>
-    
+
     <main>
         <div class="mileage-card">
             <div class="mileage-content">
@@ -99,118 +97,27 @@
                 </div>
             </div>
         </div>
-        
+
         <h2 class="section-title">Maintenance Systems</h2>
         <div class="dashboard-grid">
-            <div class="system-card">
-                <span class="card-icon">🛢️</span>
-                <h2>Oil & Fluids</h2>
-                <p>Engine, transmission, coolant & power steering</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Oil Change (5k-10k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Transmission Fluid</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Coolant Level</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Power Steering Fluid</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+oil+change" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">🔧</span>
-                <h2>Filters</h2>
-                <p>Air, cabin, oil & fuel filters</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Engine Air Filter (30k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Cabin Air Filter (15k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Oil Filter Replacement</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Fuel Filter Check</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+air+filter" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">🛑</span>
-                <h2>Brakes</h2>
-                <p>Pads, rotors, fluid & ABS</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Brake Pad Inspection</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Brake Rotor Check</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Brake Fluid Bleed</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>ABS System Test</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+brake+pads" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">🔋</span>
-                <h2>Electrical</h2>
-                <p>Battery, alternator, spark plugs</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Battery Health Check</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Alternator Test</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Spark Plugs (100k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Starter Motor Check</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+battery" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">❄️</span>
-                <h2>Cooling System</h2>
-                <p>Radiator, thermostat & fan</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Radiator Flush (30k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Thermostat Check</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Cooling Fan Test</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Hose Inspection</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+coolant+flush" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">🚙</span>
-                <h2>Suspension</h2>
-                <p>Tires, shocks & alignment</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Tire Rotation (5k-7k mi)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Tire Pressure (Monthly)</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Shock Absorber Test</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Alignment Check (Yearly)</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+tire+rotation" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">❄️</span>
-                <h2>A/C System</h2>
-                <p>Refrigerant, compressor & condenser</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Refrigerant Level Check</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>A/C Compressor Test</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Condenser Inspection</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>Cabin Vent Clean</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+ac+maintenance" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
-            <div class="system-card">
-                <span class="card-icon">📡</span>
-                <h2>OBD2 Sensors</h2>
-                <p>Diagnostic codes & sensors</p>
-                <ul class="task-list">
-                    <li><input type="checkbox" class="task-checkbox"><label>Check Engine Light Scan</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>O2 Sensor Check</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>MAF Sensor Clean</label></li>
-                    <li><input type="checkbox" class="task-checkbox"><label>EVAP System Check</label></li>
-                </ul>
-                <div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+OBD2+sensor+diagnostic" target="_blank" class="youtube-btn">📺 Watch</a></div>
-            </div>
+            <div class="system-card"><span class="card-icon">🛢️</span><h2>Oil &amp; Fluids</h2><p>Engine, transmission, coolant &amp; power steering</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Oil Change (5k-10k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Transmission Fluid</label></li><li><input type="checkbox" class="task-checkbox"><label>Coolant Level</label></li><li><input type="checkbox" class="task-checkbox"><label>Power Steering Fluid</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+oil+change" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">🔧</span><h2>Filters</h2><p>Air, cabin, oil &amp; fuel filters</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Engine Air Filter (30k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Cabin Air Filter (15k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Oil Filter Replacement</label></li><li><input type="checkbox" class="task-checkbox"><label>Fuel Filter Check</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+air+filter" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">🛑</span><h2>Brakes</h2><p>Pads, rotors, fluid &amp; ABS</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Brake Pad Inspection</label></li><li><input type="checkbox" class="task-checkbox"><label>Brake Rotor Check</label></li><li><input type="checkbox" class="task-checkbox"><label>Brake Fluid Bleed</label></li><li><input type="checkbox" class="task-checkbox"><label>ABS System Test</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+brake+pads" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">🔋</span><h2>Electrical</h2><p>Battery, alternator, spark plugs</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Battery Health Check</label></li><li><input type="checkbox" class="task-checkbox"><label>Alternator Test</label></li><li><input type="checkbox" class="task-checkbox"><label>Spark Plugs (100k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Starter Motor Check</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+battery" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">❄️</span><h2>Cooling System</h2><p>Radiator, thermostat &amp; fan</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Radiator Flush (30k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Thermostat Check</label></li><li><input type="checkbox" class="task-checkbox"><label>Cooling Fan Test</label></li><li><input type="checkbox" class="task-checkbox"><label>Hose Inspection</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+coolant+flush" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">🚙</span><h2>Suspension</h2><p>Tires, shocks &amp; alignment</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Tire Rotation (5k-7k mi)</label></li><li><input type="checkbox" class="task-checkbox"><label>Tire Pressure (Monthly)</label></li><li><input type="checkbox" class="task-checkbox"><label>Shock Absorber Test</label></li><li><input type="checkbox" class="task-checkbox"><label>Alignment Check (Yearly)</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+tire+rotation" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">❄️</span><h2>A/C System</h2><p>Refrigerant, compressor &amp; condenser</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Refrigerant Level Check</label></li><li><input type="checkbox" class="task-checkbox"><label>A/C Compressor Test</label></li><li><input type="checkbox" class="task-checkbox"><label>Condenser Inspection</label></li><li><input type="checkbox" class="task-checkbox"><label>Cabin Vent Clean</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+2011+ac+maintenance" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
+            <div class="system-card"><span class="card-icon">📡</span><h2>OBD2 Sensors</h2><p>Diagnostic codes &amp; sensors</p><ul class="task-list"><li><input type="checkbox" class="task-checkbox"><label>Check Engine Light Scan</label></li><li><input type="checkbox" class="task-checkbox"><label>O2 Sensor Check</label></li><li><input type="checkbox" class="task-checkbox"><label>MAF Sensor Clean</label></li><li><input type="checkbox" class="task-checkbox"><label>EVAP System Check</label></li></ul><div class="card-action"><a href="https://www.youtube.com/results?search_query=corolla+OBD2+sensor+diagnostic" target="_blank" class="youtube-btn">📺 Watch</a></div></div>
         </div>
     </main>
-    
+
     <footer>
         <div class="footer-content">
-            <div class="footer-left">
-                <div class="footer-logo"><img src="./logoR.png" alt="Logo"></div>
-                <div class="footer-text">Built by <strong>ROBERTO ESCOBAR CITTY</strong></div>
-            </div>
-            <div class="footer-right">v2.1</div>
+            <div class="footer-logo"><img src="./logoR.png" alt="Logo"></div>
+            <div class="footer-text">Built by <strong>ROBERTO ESCOBAR CITTY</strong> · Versión 2.1</div>
         </div>
     </footer>
-    
+
     <script>
         function trackMileage() {
             const input = document.getElementById('mileageInput');
